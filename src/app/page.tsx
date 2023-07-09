@@ -3,7 +3,8 @@
 // import "@/styles/global.css";
 import { useState } from "react";
 
-import Visible from "@/components/layout/visible";
+import { Visible } from "@/components/layout";
+import { Text } from "@/components/typography";
 
 export default function Home() {
   const [hiddenText, setHiddenText] = useState(false);
@@ -12,6 +13,8 @@ export default function Home() {
       <Visible visible={hiddenText}>
         <p>Hellow</p>
       </Visible>
+
+      <Text child="halo" size="heading" />
 
       <button
         onClick={() => {

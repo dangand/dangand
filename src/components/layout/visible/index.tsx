@@ -9,7 +9,7 @@ interface VisibleProps extends ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 
-export default function Visible(props: VisibleProps) {
+export function Visible(props: VisibleProps) {
   const { visible = false, children } = props;
 
   const visibleCondition = useMemo(() => {

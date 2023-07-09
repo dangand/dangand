@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
 
-const inter = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const font = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Dangand",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>{children}</body>
     </html>
   );
 }

@@ -9,7 +9,7 @@ interface ColumnProps extends ComponentPropsWithoutRef<"div"> {
   spacing?: number;
 }
 
-export default function Column(props: ColumnProps) {
+export function Column(props: ColumnProps) {
   const { spacing = 0, children, ...resProps } = props;
 
   //   const flexDirection = useMemo(() => {

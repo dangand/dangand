@@ -9,7 +9,7 @@ interface TextProps extends ComponentPropsWithoutRef<"p"> {
   size: "heading" | "sub heading" | "title" | "body" | "body small";
 }
 
-function Text(props: TextProps) {
+export function Text(props: TextProps) {
   const { child, size, ...resProps } = props;
 
   const textSize = useMemo(() => {
@@ -35,5 +35,3 @@ function Text(props: TextProps) {
     </>
   );
 }
-
-export default Text;

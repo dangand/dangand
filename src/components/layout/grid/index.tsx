@@ -37,7 +37,7 @@ export function Item(props: ItemGridProps) {
   );
 }
 
-export default function Grid<T extends ReactElement>(props: GridProps<T>) {
+export function Grid<T extends ReactElement>(props: GridProps<T>) {
   const { spacing = 0, children, ...resProps } = props;
 
   const gridGap = useMemo(() => {

@@ -9,7 +9,7 @@ interface RowProps extends ComponentPropsWithoutRef<"div"> {
   spacing?: number;
 }
 
-export default function Row(props: RowProps) {
+export function Row(props: RowProps) {
   const { spacing = 0, children, ...resProps } = props;
 
   //   const flexDirection = useMemo(() => {

@@ -10,7 +10,7 @@ interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
   spacing?: number;
 }
 
-export default function Container(props: ContainerProps) {
+export function Container(props: ContainerProps) {
   const { children, maxWidth, ...resProps } = props;
 
   const getMaxWidth = useMemo(() => {
