@@ -4,14 +4,14 @@ import { clsx } from "@/libs/clsx";
 
 import type { ComponentPropsWithoutRef } from "react";
 
-interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
+interface ContainerProps extends ComponentPropsWithoutRef<"section"> {
   children: React.ReactNode;
-  maxWidth: "sm" | "md" | "lg" | "xl" | "2xl";
+  maxWidth: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
   spacing?: number;
 }
 
 export function Container(props: ContainerProps) {
-  const { children, maxWidth, ...resProps } = props;
+  const { children, maxWidth = "full", ...resProps } = props;
 
   const getMaxWidth = useMemo(() => {
     switch (maxWidth) {
@@ -25,12 +25,17 @@ export function Container(props: ContainerProps) {
         return "max-w-screen-xl";
       case "2xl":
         return "max-w-screen-2xl";
+      case "full":
+        return "max-w-full";
     }
   }, [maxWidth]);
 
   return (
-    <div {...resProps} className={clsx(getMaxWidth, "mx-auto")}>
+    <section
+      {...resProps}
+      className={clsx(resProps.className, getMaxWidth, "mx-auto w-screen")}
+    >
       {children}
-    </div>
+    </section>
   );
 }

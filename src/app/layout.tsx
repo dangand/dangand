@@ -2,6 +2,9 @@ import "./globals.css";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
 
+import QueryClientProviders from "@/utils/query-provider";
+import TranslationProvider from "@/utils/translation-provider";
+
 const font = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <QueryClientProviders>
+          <TranslationProvider>{children}</TranslationProvider>
+        </QueryClientProviders>
+      </body>
     </html>
   );
 }

@@ -7,32 +7,59 @@ import type { ComponentPropsWithoutRef } from "react";
 interface ColumnProps extends ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
   spacing?: number;
+  alignItems?: "center" | "start" | "end";
+  justify?: "center" | "start" | "end" | "between" | "around" | "evenly";
 }
 
 export function Column(props: ColumnProps) {
-  const { spacing = 0, children, ...resProps } = props;
+  const {
+    spacing = 0,
+    alignItems = "start",
+    justify = "start",
+    children,
+    ...resProps
+  } = props;
 
-  //   const flexDirection = useMemo(() => {
-  //     switch (direction) {
-  //       case "row":
-  //         return "flex";
-  //       case "column":
-  //         return "flex flex-col";
-  //     }
-  //   }, [direction]);
+  const getAlign = useMemo(() => {
+    switch (alignItems) {
+      case "start":
+        return "items-start";
+      case "end":
+        return "items-end";
+      case "center":
+        return "items-center";
+    }
+  }, [alignItems]);
+
+  const getJustify = useMemo(() => {
+    switch (justify) {
+      case "start":
+        return "justify-start";
+      case "end":
+        return "justify-end";
+      case "center":
+        return "justify-center";
+      case "evenly":
+        return "justify-evenly";
+      case "around":
+        return "justify-around";
+      case "between":
+        return "justify-between";
+    }
+  }, [justify]);
 
   const flexGap = useMemo(() => {
     if (spacing === 0) {
       return 0;
-    } else if (spacing > 1) {
-      return spacing * 2;
+    } else if (spacing >= 1) {
+      return spacing * 4;
     }
   }, [spacing]);
 
   return (
     <div
       {...resProps}
-      className={clsx("flex-col", resProps.className)}
+      className={clsx("flex-col", getAlign, getJustify, resProps.className)}
       style={{ gap: flexGap }}
     >
       {children}

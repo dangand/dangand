@@ -9,8 +9,7 @@ interface BaseButtonProps extends ComponentPropsWithoutRef<"button"> {
   label: string;
   containerClassName?: string;
   loading?: boolean;
-  variant?: "primary" | "secondary" | "tertiary";
-  testId?: string;
+  variant?: "primary" | "bordered" | "secondary" | "tertiary";
 }
 
 export const BaseButton = (props: BaseButtonProps) => {
@@ -19,14 +18,13 @@ export const BaseButton = (props: BaseButtonProps) => {
     containerClassName,
     loading,
     variant: btnType = "primary",
-    testId,
     ...restProps
   } = props;
 
   const btnStyle = useMemo(() => {
     switch (btnType) {
       case "primary":
-        return "bg-blue-500 text-white";
+        return "bg-primary text-white";
       case "secondary":
         return "bg-white text-gray-600";
       case "tertiary":
@@ -47,27 +45,49 @@ export const BaseButton = (props: BaseButtonProps) => {
 
   return (
     <div className={containerClassName}>
-      <button
-        {...restProps}
-        data-testid={testId}
-        className={clsx(
-          btnStyle,
-          "font-regular rounded-lg px-5 py-3 hover:opacity-80 disabled:opacity-50",
-          restProps.className,
-        )}
-        disabled={loading || restProps.disabled}
-      >
-        {loading ? (
-          <LoadingAnimation
-            className={clsx(
-              "inline w-5 h-5 text-opacity-40 animate-spin",
-              loadingStyle,
-            )}
-          />
-        ) : (
-          label
-        )}
-      </button>
+      {btnType == "bordered" ? (
+        <button
+          {...restProps}
+          className={clsx(
+            btnStyle,
+            "border-2 box-content border-primary text-primary font-semibold text-sm rounded-md px-4 py-2 hover:bg-primary hover:text-white transtion duration-200 disabled:opacity-50",
+            restProps.className,
+          )}
+          disabled={loading || restProps.disabled}
+        >
+          {loading ? (
+            <LoadingAnimation
+              className={clsx(
+                "inline w-5 h-5 text-opacity-40 animate-spin",
+                loadingStyle,
+              )}
+            />
+          ) : (
+            label
+          )}
+        </button>
+      ) : (
+        <button
+          {...restProps}
+          className={clsx(
+            btnStyle,
+            "font-regular text-sm rounded-md px-4 py-2.5 hover:opacity-80 transtion duration-200 disabled:opacity-50",
+            restProps.className,
+          )}
+          disabled={loading || restProps.disabled}
+        >
+          {loading ? (
+            <LoadingAnimation
+              className={clsx(
+                "inline w-5 h-5 text-opacity-40 animate-spin",
+                loadingStyle,
+              )}
+            />
+          ) : (
+            label
+          )}
+        </button>
+      )}
     </div>
   );
 };

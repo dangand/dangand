@@ -29,7 +29,7 @@ export function Item(props: ItemGridProps) {
   return (
     <div
       {...resProps}
-      className={`${gridSpan}`}
+      className={clsx(resProps.className, gridSpan)}
       style={{ gridColumn: `span ${span}` }}
     >
       {children}
@@ -43,8 +43,8 @@ export function Grid<T extends ReactElement>(props: GridProps<T>) {
   const gridGap = useMemo(() => {
     if (spacing === 0) {
       return 0;
-    } else if (spacing > 1) {
-      return spacing * 2;
+    } else if (spacing >= 1) {
+      return +spacing * 4;
     }
   }, [spacing]);
 

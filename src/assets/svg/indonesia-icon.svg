@@ -1,0 +1,16 @@
+<svg width="27" height="27" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- <rect width="27" height="27" fill="#D5D5D5"/> -->
+<g clip-path="url(#clip0_422_1071)">
+<!-- <rect width="1280" height="2858" transform="translate(-179 -2143)" fill="white"/> -->
+<rect width="48" height="48" fill="url(#pattern0)"/>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_422_1071" transform="scale(0.0208333)"/>
+</pattern>
+<clipPath id="clip0_422_1071">
+<rect width="1280" height="2858" fill="white" transform="translate(-179 -2143)"/>
+</clipPath>
+<image id="image0_422_1071" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAc0lEQVR4nO3VwQkAMQhE0WnM/psRJBXMXkMaGFz+A+/RjIkEAMAfuORNJRoobsBE6JaOhFniyk/VPKOVn6z5yGpH6ZU+kGmglkeo53hTiQaGGzARuqUj0Szx5KfaPKOTn2zzkc2O0it9oKaBWR4hAAC00AdtkYharCZFwQAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
