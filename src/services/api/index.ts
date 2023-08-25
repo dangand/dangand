@@ -4,7 +4,7 @@ type API_PROPS = {
   [key: string]: string;
 };
 
-const API_URL: API_PROPS = {
+export const API_URL: API_PROPS = {
   LOCAL: "http://localhost:5000",
   DEV: "https://api.dangand.com",
   PROD: "https://api.dangand.com",
