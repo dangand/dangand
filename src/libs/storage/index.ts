@@ -1,4 +1,4 @@
-export const getLocalStorage = <T = any>(key: string) => {
+export const getLocalStorage = <T>(key: string) => {
   const value = localStorage.getItem(key);
 
   if (!value) {

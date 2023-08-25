@@ -59,7 +59,12 @@ export function Column(props: ColumnProps) {
   return (
     <div
       {...resProps}
-      className={clsx("flex-col", getAlign, getJustify, resProps.className)}
+      className={clsx(
+        "flex flex-col",
+        getAlign,
+        getJustify,
+        resProps.className,
+      )}
       style={{ gap: flexGap }}
     >
       {children}

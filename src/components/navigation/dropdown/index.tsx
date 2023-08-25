@@ -23,7 +23,7 @@ export const Dropdown = (props: DropdownProps) => {
   return (
     <div className="relative">
       <button
-        className="hover:bg-gray-100 px-3 py-1 rounded-md focus:outline-none"
+        className="hover:bg-gray-100 transition duration-200 px-3 py-1 rounded-md focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         {selectedOption == "Indonesia" ? <IndonesiaIcon /> : <EnglishIcon />}

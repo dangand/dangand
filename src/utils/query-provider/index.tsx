@@ -16,11 +16,14 @@ function QueryClientProviders({ children }: React.PropsWithChildren) {
       defaultOptions: { queries: { staleTime: 5000, retry: false } },
       mutationCache: new MutationCache({
         onError: (error: any) => {
-          if (typeof error?.response?.data?.message === "object") {
-            toast.error(error.response.data.message);
+          if (Array.isArray(error?.response?.data?.message)) {
+            toast.error(error?.response?.data?.message[0]);
             return;
+          } else if (error?.response?.data?.message) {
+            toast.error(error?.response?.data?.message);
+          } else {
+            toast.error(error?.message);
           }
-          toast.error(error?.response?.data?.message | error?.message);
         },
       }),
     }),
@@ -28,8 +31,8 @@ function QueryClientProviders({ children }: React.PropsWithChildren) {
 
   return (
     <QueryClientProvider client={client}>
-      {children}
       <ToastContainer />
+      {children}
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

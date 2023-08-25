@@ -1,12 +1,19 @@
 import axios from "axios";
 
-export const API_URL = process.env.ENABLE_MOCK_API
-  ? "https://localhost:3000/api"
-  : /* istanbul ignore next */
-    process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api";
+type API_PROPS = {
+  [key: string]: string;
+};
 
-export const api = axios.create({
-  baseURL: API_URL,
+const API_URL: API_PROPS = {
+  LOCAL: "http://localhost:5000",
+  DEV: "https://api.dangand.com",
+  PROD: "https://api.dangand.com",
+};
+
+export const BASE_URL = API_URL[`${process.env.NEXT_PUBLIC_API}`];
+
+export const API = axios.create({
+  baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
