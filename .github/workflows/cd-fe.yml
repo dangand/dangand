@@ -58,14 +58,14 @@ jobs:
           COMMIT_MESSAGE="${{ steps.commit_message.outputs.commit_message }}"
           MESSAGE="
           FRONTEND DEPLOY SUCCESS
-          _________________________
+          ________________________
 
           - platform: Dangand web
           - type: production
           - type: production
 
           - branch: main
-          - Commit Message: $COMMIT_MESSAGE
+          - commit: $COMMIT_MESSAGE
 
           - version: 2.0.1
           - url: https://dangand.com
