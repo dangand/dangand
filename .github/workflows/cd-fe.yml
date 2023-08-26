@@ -50,6 +50,11 @@ jobs:
         run: |
           TELEGRAM_BOT_TOKEN=6022708597:AAFBHWHOd0CydmP4unyBe_jVUfaJ6c0o6eU
           CHAT_ID=-990982036 
-          MESSAGE="FRONTEND DEPLOY SUCCESS\n________________________________\n\ntype: production\nbranch: main\nversion: dangand-web 2.0.0\nurl: https://dangand.com"
+          MESSAGE="FRONTEND DEPLOY SUCCESS
+                  _________________________
+                  type: production
+                  branch: main
+                  version: dangand-web 2.0.0
+                  url: https://dangand.com"
 
           curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="$MESSAGE"
