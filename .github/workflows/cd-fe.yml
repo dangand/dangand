@@ -32,3 +32,4 @@ jobs:
             yarn build
             pm2 reload 3
             pm2 restart 3
+            sudo service nginx restart
