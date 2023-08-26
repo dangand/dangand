@@ -45,17 +45,18 @@ const LoginModule = () => {
   };
   const handleNextStep = () => {
     handleStart();
-    NProgress.set(0.0);
-    NProgress.set(0.4);
-    setTimeout(() => {
-      NProgress.set(0.6);
-      NProgress.set(0.9);
-    }, 500);
-    setTimeout(() => {
-      router.push(PATH.REGISTER);
-      NProgress.set(1.0);
-      handleStop();
-    }, 1000);
+    router.push(PATH.REGISTER);
+    handleStop();
+
+    // NProgress.set(0.0);
+    // NProgress.set(0.4);
+    // setTimeout(() => {
+    //   NProgress.set(0.6);
+    //   NProgress.set(0.9);
+    // }, 500);
+    // setTimeout(() => {
+    //   NProgress.set(1.0);
+    // }, 1000);
   };
 
   return (

@@ -49,26 +49,15 @@ const RegisterModule = () => {
   };
 
   const handleNextStep = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      router.push(PATH.REGISTER_VERIFICATION);
-      setIsLoading(false);
-    }, 500);
+    handleStart();
+    router.push(PATH.REGISTER_VERIFICATION);
+    handleStop();
   };
 
   const handleBackToLogin = () => {
     handleStart();
-    NProgress.set(0.0);
-    NProgress.set(0.4);
-    setTimeout(() => {
-      NProgress.set(0.6);
-      NProgress.set(0.9);
-    }, 500);
-    setTimeout(() => {
-      router.push(PATH.LOGIN);
-      NProgress.set(1.0);
-      handleStop();
-    }, 1000);
+    router.push(PATH.LOGIN);
+    handleStop();
   };
 
   const generateSubTitle = () => {

@@ -1,0 +1,34 @@
+name: Frontend CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Execute Remote SSH Commands Using Password
+        uses: appleboy/ssh-action@master
+        with:
+          host: "37.44.244.171"
+          username: "root"
+          password: "@DANgand123"
+          port: "22"
+          script: |
+            cd ~/project/dangand_v2
+            git checkout main
+            git pull origin main
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm install 16
+            nvm use 16
+            yarn
+            pm2 stop 3
+            yarn build
+            pm2 reload 3
+            pm2 restart 3

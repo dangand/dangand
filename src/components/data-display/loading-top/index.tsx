@@ -12,7 +12,7 @@ const LoadingTop: React.FC = () => {
       router.pathname == "/auth/register" ||
       router.pathname == "/auth/register/verification"
     ) {
-      print();
+      console.info("Join Dangand", ":auth");
     }
     const handleStart = () => {
       NProgress.configure({ showSpinner: false });
