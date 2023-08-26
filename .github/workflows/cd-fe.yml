@@ -53,6 +53,7 @@ jobs:
           MESSAGE="
           FRONTEND DEPLOY SUCCESS
           _________________________
+
           - platform: Dangand web
           - type: production
           - type: production
@@ -62,4 +63,4 @@ jobs:
 
           deploy script by:@rianllauo"
 
-          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="$MESSAGE"
+          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d chat_id=$CHAT_ID -d message_thread_id: 5, -d text="$MESSAGE"
