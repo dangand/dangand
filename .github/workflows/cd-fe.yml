@@ -65,7 +65,7 @@ jobs:
           - type: production
 
           - branch: main
-          - Commit Message: $COMMIT_MESSAGE"
+          - Commit Message: $COMMIT_MESSAGE
 
           - version: 2.0.1
           - url: https://dangand.com
