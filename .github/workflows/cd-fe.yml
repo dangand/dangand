@@ -37,6 +37,10 @@ jobs:
       - name: Checkout kode
         uses: actions/checkout@v2
 
+      - name: Ambil Pesan Commit
+        id: commit_message
+        run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s')"
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -51,6 +55,7 @@ jobs:
           TELEGRAM_BOT_TOKEN=6022708597:AAFBHWHOd0CydmP4unyBe_jVUfaJ6c0o6eU
           CHAT_ID=-1001488314590
           THREAD_ID=5
+          COMMIT_MESSAGE="${{ steps.commit_message.outputs.commit_message }}"
           MESSAGE="
           FRONTEND DEPLOY SUCCESS
           _________________________
@@ -58,7 +63,10 @@ jobs:
           - platform: Dangand web
           - type: production
           - type: production
+
           - branch: main
+          - Commit Message: $COMMIT_MESSAGE"
+
           - version: 2.0.1
           - url: https://dangand.com
 
