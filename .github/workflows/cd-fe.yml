@@ -49,14 +49,15 @@ jobs:
       - name: Kirim Notifikasi ke Telegram
         run: |
           TELEGRAM_BOT_TOKEN=6022708597:AAFBHWHOd0CydmP4unyBe_jVUfaJ6c0o6eU
-          CHAT_ID=-990982036 
+          CHAT_ID=-1001488314590
           MESSAGE="
           FRONTEND DEPLOY SUCCESS
           _________________________
-
+          - platform: Dangand web
+          - type: production
           - type: production
           - branch: main
-          - version: dangand-web 2.0.0
+          - version: 2.0.1
           - url: https://dangand.com
 
           deploy script by:@rianllauo"
