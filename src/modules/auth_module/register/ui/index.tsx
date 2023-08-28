@@ -22,7 +22,7 @@ const RegisterModule = () => {
   const [dataUser, setDataUser] = useState<USER_REGISTER>({
     name: "",
     email: "",
-    phone: "0",
+    phone: "",
     password: "",
   });
 
@@ -92,8 +92,8 @@ const RegisterModule = () => {
   };
 
   return (
-    <main className="w-full flex items-center justify-center h-screen bg-white pt-20 pb-10">
-      <section className="w-full max-w-md mx-auto px-4 lg:px-0">
+    <main className="flex items-center justify-center w-full h-screen pt-20 pb-10 bg-white">
+      <section className="w-full max-w-md px-4 mx-auto lg:px-0">
         <CardAuth
           title="Buat Akun Dangand"
           subTitle={generateSubTitle()}

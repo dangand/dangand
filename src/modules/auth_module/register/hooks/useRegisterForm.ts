@@ -5,11 +5,18 @@ import { LOGIN, REGISTER } from "@/constants/endpoint";
 import { PATH } from "@/constants/path";
 import { API } from "@/services/api";
 import useMutationHook from "@/services/hooks/useMutationHook";
+import UserStore from "@/store/UserStore";
 import Cookies from "js-cookie";
 import NProgress from "nprogress";
 import { toast } from "react-toastify";
 
+import { sendVerifyCodeMutation } from "./useVerificationCode";
+
 import type { USER_REGISTER } from "@/types";
+
+const handleStop = () => {
+  NProgress.done();
+};
 
 export const registerMutation = async ({
   name,
@@ -19,33 +26,26 @@ export const registerMutation = async ({
 }: USER_REGISTER) => {
   const data = { name, email, phone, password };
   const res = await API.post(REGISTER, data);
+  if (res.data.statusCode == 201) {
+    await sendVerifyCodeMutation(res.data.user.email);
+    UserStore.setUser({ email: res.data.user.email });
+  }
+  console.log(res.data);
   return res.data;
 };
 
-const handleStart = () => {
-  NProgress.configure({ parent: "#cardContainer", showSpinner: false });
-  NProgress.start();
-};
-
-const handleStop = () => {
-  NProgress.done();
-};
-
 export const useRegisterForm = () => {
-  const [error, setError] = useState(null);
   const router = useRouter();
 
   const mutationQueryRegister = useMutationHook({
     api: registerMutation,
     options: {
       onSuccess: (res: any) => {
+        console.log(res);
         toast.success("Register berhasil");
         router.push(PATH.REGISTER_VERIFICATION);
         handleStop();
         NProgress.remove;
-      },
-      onError: (res: any) => {
-        setError(res);
       },
     },
   });
@@ -56,7 +56,6 @@ export const useRegisterForm = () => {
     password,
     phone,
   }: USER_REGISTER) => {
-    // setError(null);
     mutationQueryRegister.mutate({
       name,
       email,
@@ -68,6 +67,5 @@ export const useRegisterForm = () => {
   return {
     mutationQueryRegister,
     handleOnSubmit,
-    error,
   };
 };

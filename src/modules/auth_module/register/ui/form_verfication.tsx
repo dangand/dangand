@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+import UserStore from "@/store/UserStore";
+import { observer } from "mobx-react";
+
+import { verifyCodeMutation } from "../hooks/useVerificationCode";
+
 type UserLogin = {
   email: string;
   password: string;
@@ -10,10 +15,12 @@ interface Login {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FormVerification = ({ dataUserLogin, handleChange }: Login) => {
+const FormVerification = observer(({ dataUserLogin, handleChange }: Login) => {
   const [inputRefs, setInputRefs] = useState<Array<HTMLInputElement | null>>(
     [],
   );
+  const [verifyCode, setVerifyCode] = useState<string[]>(Array(6).fill(""));
+  const code = verifyCode.join("");
   const [countdown, setCountdown] = useState(60);
 
   const focusNextInput = (index: number) => {
@@ -27,8 +34,19 @@ const FormVerification = ({ dataUserLogin, handleChange }: Login) => {
     index: number,
   ) => {
     const value = e.target.value;
+    const newVerifyCode = [...verifyCode];
+    newVerifyCode[index] = value;
+    setVerifyCode(newVerifyCode);
+
     if (value.length === 1) {
       focusNextInput(index);
+    }
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    if (UserStore.userData.email !== undefined) {
+      await verifyCodeMutation(UserStore.userData.email, code);
     }
   };
 
@@ -57,14 +75,14 @@ const FormVerification = ({ dataUserLogin, handleChange }: Login) => {
 
   return (
     <form
-      className="w-full flex flex-col max-w-lg gap-4 mx-auto"
-      // onSubmit={handleSubmit}
+      className="flex flex-col w-full max-w-lg gap-4 mx-auto"
+      onSubmit={handleSubmit}
     >
       <p className="text-center w-[90%] mx-auto text-neutral-700 text-sm lg:text-base">
         Kode verifikasi telah dikirim ke Email{" "}
-        <span className="font-medium">rianlauo@gmail.com</span>
+        <span className="font-medium">{UserStore.userData.email}</span>
       </p>
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <div className="space-x-2">
           {[0, 1, 2, 3, 4, 5].map((index) => (
             <input
@@ -80,9 +98,9 @@ const FormVerification = ({ dataUserLogin, handleChange }: Login) => {
           ))}
         </div>
       </div>
-      <div className="text-center text-sm">
+      <div className="text-sm text-center">
         {countdown === 0 ? (
-          <button onClick={resendEmail} className="text-blue-500 font-medium">
+          <button onClick={resendEmail} className="font-medium text-blue-500">
             Kirim email lagi
           </button>
         ) : (
@@ -97,15 +115,18 @@ const FormVerification = ({ dataUserLogin, handleChange }: Login) => {
       </div>
 
       <div className="flex items-center justify-end mt-5 text-sm">
-        {/* <Link href={PATH.LOGIN} className="text-blue-500 font-medium">
-          Sudah punya akun
-        </Link> */}
-        <button className="text-white bg-indigo-500  px-5 py-2 rounded-md">
-          Selanjutnya
+        {/* <Link href={PATH.LOGIN} className="font-medium text-blue-500">
+            Sudah punya akun
+          </Link> */}
+        <button
+          type="submit"
+          className="px-5 py-2 text-white bg-indigo-500 rounded-md"
+        >
+          Verifikasi
         </button>
       </div>
     </form>
   );
-};
+});
 
 export default FormVerification;

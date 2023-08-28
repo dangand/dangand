@@ -12,6 +12,7 @@ import { PATH } from "@/constants/path";
 import NProgress from "nprogress";
 
 import { useLoginForm } from "../hooks/useLoginForm";
+import TestState from "./tesObs";
 
 type UserLogin = {
   email: string;
@@ -60,13 +61,14 @@ const LoginModule = () => {
   };
 
   return (
-    <main className="w-full flex items-center justify-center h-screen bg-white pt-20 pb-10 px-4 md:px-0">
+    <main className="flex items-center justify-center w-full h-screen px-4 pt-20 pb-10 bg-white md:px-0">
       <section className="w-full max-w-md mx-auto">
         <CardAuth title="Login">
           <form
-            className="w-full flex flex-col max-w-lg gap-4 mx-auto"
+            className="flex flex-col w-full max-w-lg gap-4 mx-auto"
             onSubmit={handleSubmit}
           >
+            <TestState />
             <div className="flex flex-col gap-2">
               <TextInput
                 label="Email"
@@ -92,11 +94,11 @@ const LoginModule = () => {
               <button
                 type="button"
                 onClick={handleNextStep}
-                className="text-blue-500 font-medium"
+                className="font-medium text-blue-500"
               >
                 Buat akun
               </button>
-              <button className="text-white bg-indigo-500  px-5 py-2 rounded-md">
+              <button className="px-5 py-2 text-white bg-indigo-500 rounded-md">
                 Selanjutnya
               </button>
             </div>
