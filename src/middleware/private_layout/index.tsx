@@ -58,7 +58,7 @@ const PrivateLayout = ({ children }: Props) => {
 
     if (DASHBOARD_ROUTE.includes(router.pathname) && token) {
       fetchProfile();
-    } else if (!token) {
+    } else if (!token && DASHBOARD_ROUTE.includes(router.pathname)) {
       router.push({
         pathname: PATH.AUTH.LOGIN,
         query: { returnUrl: router.asPath },
