@@ -43,7 +43,7 @@ export const useRegisterForm = () => {
       onSuccess: (res: any) => {
         console.log(res);
         toast.success("Register berhasil");
-        router.push(PATH.REGISTER_VERIFICATION);
+        router.push(PATH.AUTH.REGISTER_VERIFICATION);
         handleStop();
         NProgress.remove;
       },

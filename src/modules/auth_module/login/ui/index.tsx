@@ -46,7 +46,7 @@ const LoginModule = () => {
   };
   const handleNextStep = () => {
     handleStart();
-    router.push(PATH.REGISTER);
+    router.push(PATH.AUTH.REGISTER);
     handleStop();
 
     // NProgress.set(0.0);
