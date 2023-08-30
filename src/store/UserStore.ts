@@ -7,12 +7,7 @@ type DataUser = {
 };
 
 class UserStore {
-  userData: DataUser = {
-    email: "",
-    nama: "",
-    accessToken: "",
-    // verifyCode: "",
-  };
+  userData: any | null = {};
 
   constructor() {
     makeObservable(this, {
@@ -24,21 +19,9 @@ class UserStore {
     });
   }
 
-  setUser(userData: DataUser) {
+  setUser(userData: any | null) {
     this.userData = userData;
   }
-
-  //   get isNegative() {
-  //     return this.count < 0 ? "Yes" : "No";
-  //   }
-
-  //   add() {
-  //     this.count += 1;
-  //   }
-
-  //   subtract() {
-  //     this.count -= 1;
-  //   }
 }
 
 const store = new UserStore();

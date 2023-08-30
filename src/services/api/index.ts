@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 type API_PROPS = {
   [key: string]: string;
@@ -17,4 +18,12 @@ export const API = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+});
+
+API.interceptors.request.use((config: any) => {
+  const token = Cookies.get("dangand_access_token");
+  if (token) {
+    config.headers["Authorization"] = `Bearer ${token}`;
+  }
+  return config;
 });

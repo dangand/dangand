@@ -5,3 +5,4 @@ export * from "./row";
 export * from "./visible";
 export * from "./box";
 export * from "./center";
+export * from "./divider-vertical";

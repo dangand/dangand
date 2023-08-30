@@ -6,6 +6,7 @@ import Script from "next/script";
 import { useEffect } from "react";
 
 import LoadingTop from "@/components/data-display/loading-top";
+import PrivateLayout from "@/middleware/private_layout";
 import QueryClientProviders from "@/utils/query-provider";
 import TranslationProvider from "@/utils/translation-provider";
 import { Hydrate } from "@tanstack/react-query";
@@ -61,7 +62,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Hydrate state={pageProps.dehydratedState}>
         <TranslationProvider>
           <LoadingTop />
-          <Component {...pageProps} />
+          <PrivateLayout>
+            <Component {...pageProps} />
+          </PrivateLayout>
         </TranslationProvider>
       </Hydrate>
     </QueryClientProviders>

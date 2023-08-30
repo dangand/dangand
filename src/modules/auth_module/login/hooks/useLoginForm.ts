@@ -1,4 +1,7 @@
+import { useRouter } from "next/router";
+
 import { LOGIN } from "@/constants/endpoint";
+import { PATH } from "@/constants/path";
 import { API } from "@/services/api";
 import useMutationHook from "@/services/hooks/useMutationHook";
 import UserStore from "@/store/UserStore";
@@ -11,11 +14,11 @@ export const loginMutation = async ({ email, password }: USER_LOGIN) => {
   const data = { email, password };
   const res = await API.post(LOGIN, data);
   UserStore.setUser({ accessToken: res.data.accessToken });
-  console.log(UserStore.userData.accessToken);
   return res.data;
 };
 
 export const useLoginForm = () => {
+  const router = useRouter();
   const mutationQueryLogin = useMutationHook({
     api: loginMutation,
     options: {
@@ -25,10 +28,9 @@ export const useLoginForm = () => {
         //   toast.error("Anda tidak memiliki akses!");
         //   return;
         // }
-        // Cookies.set("access_token", res.data.access_token);
-
-        // dataUser.setUser(res.data.user);
+        Cookies.set("dangand_access_token", res.accessToken);
         toast.success("Berhasil Login");
+        router.push(PATH.DASHBOARD.HOME);
         return;
       },
     },

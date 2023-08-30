@@ -50,28 +50,28 @@ const RegisterModule = () => {
 
   const handleNextStep = () => {
     handleStart();
-    router.push(PATH.REGISTER_VERIFICATION);
+    router.push(PATH.AUTH.REGISTER_VERIFICATION);
     handleStop();
   };
 
   const handleBackToLogin = () => {
     handleStart();
-    router.push(PATH.LOGIN);
+    router.push(PATH.AUTH.LOGIN);
     handleStop();
   };
 
   const generateSubTitle = () => {
     switch (currentPath) {
-      case PATH.REGISTER:
+      case PATH.AUTH.REGISTER:
         return "Masukan nama dan email kamu";
-      case PATH.REGISTER_VERIFICATION:
+      case PATH.AUTH.REGISTER_VERIFICATION:
         return "Verifikasi email kamu";
     }
   };
 
   const generateForm = () => {
     switch (currentPath) {
-      case PATH.REGISTER:
+      case PATH.AUTH.REGISTER:
         return (
           <FormRegister
             dataUser={dataUser}
@@ -81,7 +81,7 @@ const RegisterModule = () => {
             handleSubmit={handleSubmit}
           />
         );
-      case PATH.REGISTER_VERIFICATION:
+      case PATH.AUTH.REGISTER_VERIFICATION:
         return (
           <FormVerification
             dataUserLogin={dataUser}

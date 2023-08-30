@@ -1,8 +1,10 @@
 export const PATH = {
-  LOGIN: "/auth/login",
-  LOGIN_ADMIN: "/auth/login/admin",
-  REGISTER: "/auth/register",
-  REGISTER_VERIFICATION: "/auth/register/verification",
+  AUTH: {
+    LOGIN: "/auth/login",
+    LOGIN_ADMIN: "/auth/login/admin",
+    REGISTER: "/auth/register",
+    REGISTER_VERIFICATION: "/auth/register/verification",
+  },
   LANDING_PAGE: {
     HOME: "/",
     ABOUT: "/about",
@@ -10,7 +12,19 @@ export const PATH = {
     TEMPLATE: "/template",
     HELP: "/help",
   },
+  DASHBOARD: {
+    HOME: "/dashboard",
+    LIST_INVITATION: "/dashboard/list-invitation",
+    LIST_GUEST: "/dashborad/guest",
+  },
 };
+
+export const AUTH_PAGE = [
+  PATH.AUTH.LOGIN,
+  PATH.AUTH.LOGIN_ADMIN,
+  PATH.AUTH.REGISTER,
+  PATH.AUTH.REGISTER_VERIFICATION,
+];
 
 export const LANDING_PAGE_ROUTE = [
   PATH.LANDING_PAGE.HOME,
@@ -18,4 +32,10 @@ export const LANDING_PAGE_ROUTE = [
   PATH.LANDING_PAGE.PRICE,
   PATH.LANDING_PAGE.TEMPLATE,
   PATH.LANDING_PAGE.HELP,
+];
+
+export const DASHBOARD_ROUTE = [
+  PATH.DASHBOARD.HOME,
+  PATH.DASHBOARD.LIST_GUEST,
+  PATH.DASHBOARD.LIST_INVITATION,
 ];

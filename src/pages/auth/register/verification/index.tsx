@@ -7,7 +7,7 @@ const VerificationPage = () => {
   return (
     <>
       <MetaData
-        title="Verifikasi Email"
+        title="Verifikasi Email - Dangand"
         description="verifikasi email dangand"
       />
       <RegisterModule />
