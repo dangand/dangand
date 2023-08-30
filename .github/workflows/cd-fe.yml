@@ -65,6 +65,9 @@ jobs:
           - branch: main
           - url: https://dangand.com
 
-          - update: $COMMIT_MESSAGE"
+          - update: $COMMIT_MESSAGE
+
+          author: @rianllauo
+          "
 
           curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d chat_id=$CHAT_ID, -d message_thread_id=$THREAD_ID -d text="$MESSAGE"
