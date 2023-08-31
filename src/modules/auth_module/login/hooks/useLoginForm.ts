@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
 import { LOGIN } from "@/constants/endpoint";
-import { PATH } from "@/constants/path";
+import { BASE_DASHBOARD_URL, PATH } from "@/constants/path";
 import { API } from "@/services/api";
 import useMutationHook from "@/services/hooks/useMutationHook";
 import UserStore from "@/store/UserStore";
@@ -30,7 +30,7 @@ export const useLoginForm = () => {
         // }
         Cookies.set("dangand_access_token", res.accessToken);
         toast.success("Berhasil Login");
-        router.push(PATH.DASHBOARD.HOME);
+        router.push(BASE_DASHBOARD_URL);
         return;
       },
     },

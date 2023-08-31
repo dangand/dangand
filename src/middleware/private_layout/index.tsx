@@ -71,7 +71,7 @@ const PrivateLayout = ({ children }: Props) => {
       router.push(PATH.DASHBOARD.LIST_INVITATION);
     }
     setLoading(false);
-  }, [token]);
+  }, [router, token]);
 
   if (isLoading) {
     return (

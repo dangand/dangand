@@ -1,3 +1,15 @@
+type URL_PROPS = {
+  [key: string]: string;
+};
+
+export const DASHBOARD_URL: URL_PROPS = {
+  LOCAL: "http://localhost:3020",
+  DEV: "https://app.dangand.com",
+};
+
+export const BASE_DASHBOARD_URL =
+  DASHBOARD_URL[`${process.env.NEXT_PUBLIC_URL}`];
+
 export const PATH = {
   AUTH: {
     LOGIN: "/auth/login",
@@ -13,9 +25,9 @@ export const PATH = {
     HELP: "/help",
   },
   DASHBOARD: {
-    HOME: "/dashboard",
-    LIST_INVITATION: "/dashboard/list-invitation",
-    LIST_GUEST: "/dashborad/guest",
+    HOME: `${BASE_DASHBOARD_URL}/`,
+    LIST_INVITATION: `${BASE_DASHBOARD_URL}/list-invitation`,
+    LIST_GUEST: `${BASE_DASHBOARD_URL}/guest`,
   },
 };
 
