@@ -1,14 +1,14 @@
 {
-    "navhome": "Beranda",
-    "navabout": "Tentang",
-    "navprice": "Harga",
-    "navtemplate": "Template",
-    "navafiliate": "Afiliasi",
-    "navpartner": "Patner",
-    "navhelp": "Bantuan",
-    "login": "Masuk",
-    "register": "Daftar",
-    "tryFree": "Coba Gratis",
+  "navhome": "Beranda",
+  "navabout": "Tentang",
+  "navprice": "Harga",
+  "navtemplate": "Template",
+  "navafiliate": "Afiliasi",
+  "navpartner": "Patner",
+  "navhelp": "Bantuan",
+  "login": "Masuk",
+  "register": "Daftar",
+  "tryFree": "Coba Gratis",
 
-    "description": "Selamat datang di website saya."
-  }
+  "description": "Selamat datang di website saya."
+}

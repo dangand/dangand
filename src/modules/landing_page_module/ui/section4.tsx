@@ -94,7 +94,10 @@ const section4 = () => {
   return (
     <section className="flex flex-col justify-center w-full gap-12 py-12 md:flex-row">
       {PriceType.map((value, index) => (
-        <div className="flex flex-col  p-4 mx-5 shadow-lg md:w-[25%] rounded-xl">
+        <div
+          className="flex flex-col  p-4 mx-5 shadow-lg md:w-[25%] rounded-xl"
+          key={value.title}
+        >
           <p
             className={clsx(
               "mt-3 text-xl font-medium",
@@ -104,10 +107,10 @@ const section4 = () => {
             {value.title}
           </p>
           <p className="text-2xl">Rp. {value.price.toLocaleString("id-ID")}</p>
-          <p className="">{value.description}</p>
+          <p>{value.description}</p>
           <div className="mt-4">
             {value.fitur.map((values) => (
-              <div className="flex gap-2">
+              <div className="flex gap-2" key={values.name}>
                 {values.active == true ? (
                   <CheckCircleActive />
                 ) : (
