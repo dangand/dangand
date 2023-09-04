@@ -1,5 +1,6 @@
 import {
   CheckCircleActive,
+  CheckCircleWhite,
   FreePrice,
   PartyPrice,
   Receipt,
@@ -43,6 +44,14 @@ const PriceType: PRICE_TYPE[] = [
         name: "test2",
         active: false,
       },
+      {
+        name: "test2",
+        active: false,
+      },
+      {
+        name: "test2",
+        active: false,
+      },
     ],
   },
   {
@@ -60,6 +69,14 @@ const PriceType: PRICE_TYPE[] = [
       {
         name: "test1",
         active: true,
+      },
+      {
+        name: "test2",
+        active: false,
+      },
+      {
+        name: "test2",
+        active: false,
       },
       {
         name: "test2",
@@ -86,42 +103,102 @@ const PriceType: PRICE_TYPE[] = [
         name: "test2",
         active: true,
       },
+      {
+        name: "test2",
+        active: false,
+      },
+      {
+        name: "test2",
+        active: false,
+      },
     ],
   },
 ];
 
 const section4 = () => {
   return (
-    <section className="flex flex-col justify-center w-full gap-12 py-12 md:flex-row">
-      {PriceType.map((value, index) => (
-        <div
-          className="flex flex-col  p-4 mx-5 shadow-lg md:w-[25%] rounded-xl"
-          key={value.title}
-        >
-          <p
+    <section className="flex flex-col items-center mt-16">
+      <div className="flex flex-col items-center px-7 ">
+        <h1 className="text-3xl font-semibold">Pesan Sekarang</h1>
+        <h2 className="text-lg text-center">
+          Harga murah tapi kualitas tidak murahan, Cuman ada di Dangand
+        </h2>
+      </div>
+      <div className="flex flex-col justify-center w-full gap-10 py-12 md:gap-1 md:flex-row">
+        {PriceType.map((value, index) => (
+          <div
             className={clsx(
-              "mt-3 text-xl font-medium",
-              value.recommended ? "text-indigo-500" : "text-black",
+              "flex flex-col  p-8 mx-5 shadow-lg md:w-[28%] rounded-xl justify-between",
+              value.recommended ? "bg-neutral-800" : "bg-white",
             )}
+            key={value.title}
           >
-            {value.title}
-          </p>
-          <p className="text-2xl">Rp. {value.price.toLocaleString("id-ID")}</p>
-          <p>{value.description}</p>
-          <div className="mt-4">
-            {value.fitur.map((values) => (
-              <div className="flex gap-2" key={values.name}>
-                {values.active == true ? (
-                  <CheckCircleActive />
-                ) : (
-                  <TimesCircleNoneActive />
-                )}
-                <p>{values.name}</p>
+            <div>
+              <div className="flex justify-between">
+                <p
+                  className={clsx(
+                    "mt-3 text-lg font-medium",
+                    value.recommended ? "text-amber-300" : "text-indigo-500",
+                  )}
+                >
+                  {value.title}
+                </p>
+                {value.recommended ? (
+                  <p className="px-6 text-sm bg-white h-7 rounded-[20px] justify-center text-black pt-1">
+                    Best Price
+                  </p>
+                ) : null}
               </div>
-            ))}
+              <p
+                className={clsx(
+                  "text-2xl font-medium",
+                  value.recommended ? "text-white" : "text-black",
+                )}
+              >
+                Rp. {value.price.toLocaleString("id-ID")}
+              </p>
+              <p
+                className={clsx(
+                  value.recommended ? "text-white" : "text-neutral-600",
+                  "text-sm",
+                )}
+              >
+                {value.description}
+              </p>
+              <div className="flex flex-col gap-1 mt-4">
+                {value.fitur.map((values) => (
+                  <div className="flex gap-3 " key={values.name}>
+                    {values.active == true && value.recommended ? (
+                      <CheckCircleWhite />
+                    ) : values.active == true ? (
+                      <CheckCircleActive />
+                    ) : (
+                      <TimesCircleNoneActive />
+                    )}
+                    <p
+                      className={clsx(
+                        value.recommended ? "text-white" : "text-black",
+                      )}
+                    >
+                      {values.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              className={clsx(
+                "py-2 rounded-[15px]  mt-7",
+                value.recommended
+                  ? "text-black, bg-white"
+                  : "text-white bg-indigo-500",
+              )}
+            >
+              Pilih Paket
+            </button>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

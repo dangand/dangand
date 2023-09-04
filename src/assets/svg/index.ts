@@ -26,3 +26,4 @@ export { default as CheckCircleActive } from "./check-circle-active.svg";
 export { default as TimesCircleActive } from "./times-circle-active.svg";
 export { default as CheckCircleNoneActive } from "./check-circle-none-active.svg";
 export { default as TimesCircleNoneActive } from "./times-circle-none-active.svg";
+export { default as CheckCircleWhite } from "./check-circle-white.svg";
