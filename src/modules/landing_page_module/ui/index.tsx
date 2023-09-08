@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import Footer from "./footer";
 import { Hero } from "./hero";
 import { NavbarLandingPage } from "./navbar";
 import Section1 from "./section1";
@@ -20,6 +21,7 @@ export const LandingPage = () => {
       </div>
       <Section3 />
       <Section4 />
+      <Footer />
     </main>
   );
 };

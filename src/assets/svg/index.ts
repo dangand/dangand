@@ -1,5 +1,6 @@
 export { default as LoadingAnimation } from "./loading-animation.svg";
 export { default as DangandIconPrimary } from "./dangand-icon-primary.svg";
+export { default as DangandIconSecondary } from "./dangand-icon-secondary.svg";
 export { default as EnglishIcon } from "./english-icon.svg";
 export { default as IndonesiaIcon } from "./indonesia-icon.svg";
 export { default as ChartBar } from "./chart-bar.svg";
@@ -27,3 +28,11 @@ export { default as TimesCircleActive } from "./times-circle-active.svg";
 export { default as CheckCircleNoneActive } from "./check-circle-none-active.svg";
 export { default as TimesCircleNoneActive } from "./times-circle-none-active.svg";
 export { default as CheckCircleWhite } from "./check-circle-white.svg";
+export { default as Facebook } from "./facebook.svg";
+export { default as Github } from "./github.svg";
+export { default as LinkedInd } from "./linkedIn.svg";
+export { default as Youtube } from "./youtube.svg";
+export { default as Instagram } from "./instagram.svg";
+export { default as PhoneIcon } from "./phone-icon.svg";
+export { default as EmailIcon } from "./email-icon.svg";
+export { default as LocationIcon } from "./location-icon.svg";
