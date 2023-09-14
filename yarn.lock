@@ -5572,6 +5572,11 @@ damerau-levenshtein@^1.0.8:
   resolved "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
+dangandui@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/dangandui/-/dangandui-1.0.1.tgz#9a5141e84bbcf22d1cd7e004aa5359c5b6e16c51"
+  integrity sha512-nPayGPH1ObH75+v3kX6iZI4slGxUNz93JorMDbDZfumPja4KdlHk9Km+oJKHag2Z1QwRA+y1yFzF3VbGpovoug==
+
 data-urls@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/data-urls/-/data-urls-3.0.2.tgz"

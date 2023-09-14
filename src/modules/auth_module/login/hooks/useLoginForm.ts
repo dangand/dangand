@@ -30,7 +30,7 @@ export const useLoginForm = () => {
         // }
         Cookies.set("dangand_access_token", res.accessToken);
         toast.success("Berhasil Login");
-        router.push(BASE_DASHBOARD_URL);
+        router.push(BASE_DASHBOARD_URL + `?token=${res.accessToken}`);
         return;
       },
     },

@@ -68,7 +68,7 @@ const PrivateLayout = ({ children }: Props) => {
       (LANDING_PAGE_ROUTE.includes(router.pathname) ||
         AUTH_PAGE.includes(router.pathname))
     ) {
-      router.push(PATH.DASHBOARD.LIST_INVITATION);
+      // router.push(PATH.DASHBOARD.LIST_INVITATION);
     }
     setLoading(false);
   }, [router, token]);

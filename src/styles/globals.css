@@ -17,13 +17,8 @@
 }
 
 body{
-  /* font-family: 'Poppins', sans-serif; */
   position: relative;
   font-family: 'Inter', sans-serif;
-}
-
-.homepage{
-  font-family: 'Trip Sans', sans-serif;
 }
 
 #cardContainer{
