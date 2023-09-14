@@ -48,6 +48,12 @@ const FormVerification = observer(({ dataUserLogin, handleChange }: Login) => {
     if (value.length === 1) {
       focusNextInput(index);
     }
+
+    if (value.length === 0) {
+      if (index > 0 && inputRefs[index - 1]) {
+        inputRefs[index - 1]?.focus();
+      }
+    }
   };
 
   const handleSubmit = async (e: any) => {

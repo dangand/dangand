@@ -1,14 +1,14 @@
 {
-    "navhome": "Home",
-    "navabout": "About",
-    "navprice": "Price",
-    "navtemplate": "Template",
-    "navafiliate": "Affiliate",
-    "navpartner": "Partner",
-    "navhelp": "Help",
-    "login": "Login",
-    "register": "Register",
-    "tryFree": "Try Free",
+  "navhome": "Home",
+  "navabout": "About",
+  "navprice": "Price",
+  "navtemplate": "Template",
+  "navafiliate": "Affiliate",
+  "navpartner": "Partner",
+  "navhelp": "Help",
+  "login": "Login",
+  "register": "Register",
+  "tryFree": "Try Free",
 
-    "description": "Welcome to my website."
+  "description": "Welcome to my website."
 }
