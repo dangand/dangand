@@ -37,13 +37,6 @@ jobs:
       # - name: Checkout kode
       #   uses: actions/checkout@v2
 
-      - name: Notify the commit on Telegram
-        uses: EverythingSuckz/github-telegram-notify@main
-        with:
-          bot_token: "6022708597:AAFBHWHOd0CydmP4unyBe_jVUfaJ6c0o6eU"
-          chat_id: "-1001488314590"
-          topic_id: "5"
-
       # - name: Get Commit
       #   id: commit_message
       #   run: echo "::set-output name=commit_message::$(git log -1 --pretty=format:'%s')"
