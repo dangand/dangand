@@ -19,6 +19,7 @@ const FormVerification = observer(({ dataUserLogin, handleChange }: Login) => {
   const [inputRefs, setInputRefs] = useState<Array<HTMLInputElement | null>>(
     [],
   );
+  console.log(inputRefs);
   const [verifyCode, setVerifyCode] = useState<string[]>(Array(6).fill(""));
   const code = verifyCode.join("");
   const [countdown, setCountdown] = useState(60);
@@ -34,6 +35,12 @@ const FormVerification = observer(({ dataUserLogin, handleChange }: Login) => {
     index: number,
   ) => {
     const value = e.target.value;
+    if (value.length === 0) {
+      if (index > 0 && inputRefs[index - 1]) {
+        inputRefs[index - 1]?.focus();
+      }
+    }
+
     const newVerifyCode = [...verifyCode];
     newVerifyCode[index] = value;
     setVerifyCode(newVerifyCode);
