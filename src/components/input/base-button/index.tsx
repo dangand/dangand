@@ -9,7 +9,7 @@ interface BaseButtonProps extends ComponentPropsWithoutRef<"button"> {
   label: string;
   containerClassName?: string;
   loading?: boolean;
-  variant?: "primary" | "bordered" | "secondary" | "tertiary";
+  variant?: "primary" | "bordered" | "secondary" | "tertiary" | "transparent";
 }
 
 export const BaseButton = (props: BaseButtonProps) => {
@@ -29,6 +29,8 @@ export const BaseButton = (props: BaseButtonProps) => {
         return "bg-white text-gray-600";
       case "tertiary":
         return "bg-red-500 text-white";
+      case "transparent":
+        return "text-black";
     }
   }, [btnType]);
 
@@ -50,7 +52,28 @@ export const BaseButton = (props: BaseButtonProps) => {
           {...restProps}
           className={clsx(
             btnStyle,
-            "border-2 box-content border-primary text-primary font-semibold text-sm rounded-md px-4 py-2 hover:bg-primary hover:text-white transtion duration-200 disabled:opacity-50",
+            "border-2 box-content border-primary text-primary font-semibold text-sm rounded-3xl px-4 py-2 hover:bg-primary hover:text-white transtion duration-200 disabled:opacity-50",
+            restProps.className,
+          )}
+          disabled={loading || restProps.disabled}
+        >
+          {loading ? (
+            <LoadingAnimation
+              className={clsx(
+                "inline w-5 h-5 text-opacity-40 animate-spin",
+                loadingStyle,
+              )}
+            />
+          ) : (
+            label
+          )}
+        </button>
+      ) : btnType == "transparent" ? (
+        <button
+          {...restProps}
+          className={clsx(
+            btnStyle,
+            "border-2 box-content border-transparent  text-black font-semibold text-sm rounded-3xl px-4 py-2 hover:border-primary hover:text-primary transtion duration-200 disabled:opacity-50",
             restProps.className,
           )}
           disabled={loading || restProps.disabled}
@@ -71,7 +94,7 @@ export const BaseButton = (props: BaseButtonProps) => {
           {...restProps}
           className={clsx(
             btnStyle,
-            "font-regular text-sm rounded-md px-4 py-2.5 hover:opacity-80 transtion duration-200 disabled:opacity-50",
+            "font-regular text-sm rounded-3xl px-4 py-2.5 hover:opacity-80 transtion duration-200 disabled:opacity-50",
             restProps.className,
           )}
           disabled={loading || restProps.disabled}

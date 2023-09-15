@@ -36,3 +36,5 @@ export { default as Instagram } from "./instagram.svg";
 export { default as PhoneIcon } from "./phone-icon.svg";
 export { default as EmailIcon } from "./email-icon.svg";
 export { default as LocationIcon } from "./location-icon.svg";
+export { default as HeroFestival } from "./hero-festival.svg";
+export { default as HeroLine } from "./hero-line.svg";
