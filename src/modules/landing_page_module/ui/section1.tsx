@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useMemo } from "react";
 
 import { AngleRight, ChartBar, Coins, Puzzle, Receipt } from "@/assets/svg";
+import { ContainerSection } from "@/components/layout";
 
 import sampleDashboard2 from "../../../assets/image/sample-dashboard2.png";
 import sampleDashboard3 from "../../../assets/image/sample-dashboard3.png";
@@ -85,83 +86,85 @@ const Section1 = () => {
   };
 
   return (
-    <section className="flex flex-col items-start gap-8 py-12">
-      <div className="w-full flex items-center justify-between">
-        <div className="relative flex flex-col items-start justify-start ">
-          <div className="absolute p-10 bg-orange-100 rounded-md -top-6 -left-6 -z-10"></div>
-          <h2 className="text-3xl max-w-[350px] font-semibold ">
-            Gimana sih Dangand bisa bantu acara kamu?
-          </h2>
-          <p className="max-w-[600px] mx-auto text-neutral-700 text-sm lg:text-base">
-            Dangand siap bikin acaramu jadi lebih seru dan gak ribet! Dari
-            undangan keren yang bisa kamu sesuaikan, sampai manajemen kehadiran
-            yang canggih.
-          </p>
+    <section className="w-full flex flex-col items-start gap-8 bg-indigo-800">
+      <ContainerSection>
+        <div className="w-full flex items-center justify-between">
+          <div className="relative flex flex-col items-start justify-start ">
+            <div className="absolute p-10 bg-orange-100 rounded-md -top-6 -left-6 -z-10"></div>
+            <h2 className="text-3xl max-w-[350px] font-semibold ">
+              Gimana sih Dangand bisa bantu acara kamu?
+            </h2>
+            <p className="max-w-[600px] mx-auto text-neutral-700 text-sm lg:text-base">
+              Dangand siap bikin acaramu jadi lebih seru dan gak ribet! Dari
+              undangan keren yang bisa kamu sesuaikan, sampai manajemen
+              kehadiran yang canggih.
+            </p>
+          </div>
+          <button
+            className={`bg-indigo-500 w-fit text-white mt-3 text-sm py-3 font-medium px-6 rounded-full hidden lg:block`}
+          >
+            Lihat detail
+          </button>
         </div>
-        <button
-          className={`bg-indigo-500 w-fit text-white mt-3 text-sm py-3 font-medium px-6 rounded-full hidden lg:block`}
-        >
-          Lihat detail
-        </button>
-      </div>
 
-      <div className="flex flex-col w-full gap-12">
-        {FeatureItem.map((item) =>
-          item.position == "left" ? (
-            <div
-              key={item.title}
-              className="lg:grid flex-row-reverse grid-cols-12 gap-8"
-            >
+        <div className="flex flex-col w-full gap-12">
+          {FeatureItem.map((item) =>
+            item.position == "left" ? (
               <div
-                className={`${item.color} relative h-[240px]  col-span-5 p-8 rounded flex flex-col gap-2 items-center justify-center overflow-hidden `}
+                key={item.title}
+                className="lg:grid flex-row-reverse grid-cols-12 gap-8"
               >
-                {generateImage(item)}
-              </div>
-              <div className={`col-span-6 py-4`}>
-                {/* <div className="p-2 bg-blue-200 rounded-md">{item.icon}</div> */}
-                <h3 className="text-2xl font-medium">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700">
-                  {item.description}
-                </p>
-                <button
-                  className={`${item.color} flex items-center gap-2 mt-4 text-sm py-2 font-medium px-6 rounded-full`}
+                <div
+                  className={`${item.color} relative h-[240px]  col-span-5 p-8 rounded flex flex-col gap-2 items-center justify-center overflow-hidden `}
                 >
-                  Mulai Sekarang
-                  <div className="flex items-center justify-center p-2 bg-white rounded-full">
-                    <AngleRight />
-                  </div>
-                </button>
+                  {generateImage(item)}
+                </div>
+                <div className={`col-span-6 py-4`}>
+                  {/* <div className="p-2 bg-blue-200 rounded-md">{item.icon}</div> */}
+                  <h3 className="text-2xl font-medium">{item.title}</h3>
+                  <p className="mt-2 text-sm text-neutral-700">
+                    {item.description}
+                  </p>
+                  <button
+                    className={`${item.color} flex items-center gap-2 mt-4 text-sm py-2 font-medium px-6 rounded-full`}
+                  >
+                    Mulai Sekarang
+                    <div className="flex items-center justify-center p-2 bg-white rounded-full">
+                      <AngleRight />
+                    </div>
+                  </button>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div
-              key={item.title}
-              className="grid flex-row-reverse grid-cols-12 gap-8"
-            >
+            ) : (
               <div
-                className={`${item.color} relative h-[240px]  col-span-5 p-8 rounded flex flex-col gap-2 items-center justify-center overflow-hidden order-last`}
+                key={item.title}
+                className="grid flex-row-reverse grid-cols-12 gap-8"
               >
-                {generateImage(item)}
-              </div>
-              <div className={`col-span-6 py-4`}>
-                {/* <div className="p-2 bg-blue-200 rounded-md">{item.icon}</div> */}
-                <h3 className="text-2xl font-medium">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700">
-                  {item.description}
-                </p>
-                <button
-                  className={`${item.color} flex items-center gap-2 mt-4 text-sm py-2 font-medium px-6 rounded-full`}
+                <div
+                  className={`${item.color} relative h-[240px]  col-span-5 p-8 rounded flex flex-col gap-2 items-center justify-center overflow-hidden order-last`}
                 >
-                  Mulai Sekarang
-                  <div className="flex items-center justify-center p-2 bg-white rounded-full">
-                    <AngleRight />
-                  </div>
-                </button>
+                  {generateImage(item)}
+                </div>
+                <div className={`col-span-6 py-4`}>
+                  {/* <div className="p-2 bg-blue-200 rounded-md">{item.icon}</div> */}
+                  <h3 className="text-2xl font-medium">{item.title}</h3>
+                  <p className="mt-2 text-sm text-neutral-700">
+                    {item.description}
+                  </p>
+                  <button
+                    className={`${item.color} flex items-center gap-2 mt-4 text-sm py-2 font-medium px-6 rounded-full`}
+                  >
+                    Mulai Sekarang
+                    <div className="flex items-center justify-center p-2 bg-white rounded-full">
+                      <AngleRight />
+                    </div>
+                  </button>
+                </div>
               </div>
-            </div>
-          ),
-        )}
-      </div>
+            ),
+          )}
+        </div>
+      </ContainerSection>
     </section>
   );
 };

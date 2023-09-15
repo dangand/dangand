@@ -15,10 +15,10 @@ export const LandingPage = () => {
     <main className="homepage">
       <NavbarLandingPage />
       <Hero />
-      <div className="px-4 mx-auto lg:px-0 xl:max-w-screen-xl xl:px-8 2xl:max-w-screen-xl">
-        <Section2 />
-        <Section1 />
-      </div>
+      {/* <div className="px-4 mx-auto lg:px-0 xl:max-w-screen-xl xl:px-8 2xl:max-w-screen-xl"> */}
+      <Section2 />
+      <Section1 />
+      {/* </div> */}
       <Section3 />
       <Section4 />
       <Footer />
