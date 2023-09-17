@@ -1,9 +1,21 @@
 import React from "react";
 
-type Props = {
-  children: React.ReactNode;
-};
+import { clsx } from "@/libs";
 
-export const ContainerSection = ({ children }: Props) => {
-  return <div className="max-w-screen-xl mx-auto py-24">{children}</div>;
+import type { ComponentPropsWithoutRef } from "react";
+
+interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
+  children: React.ReactNode;
+}
+
+export const ContainerSection = (props: ContainerProps) => {
+  const { children, ...resProps } = props;
+  return (
+    <div
+      {...resProps}
+      className={clsx(resProps.className, "max-w-screen-xl py-24 mx-auto")}
+    >
+      {children}
+    </div>
+  );
 };
