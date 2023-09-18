@@ -10,6 +10,7 @@ import Section2 from "./section2";
 import Section3 from "./section3";
 import Section4 from "./section4";
 import SectionCardPrice from "./sectionCardPrice";
+import SectionFooter from "./sectionFooter";
 import SectionInfo from "./sectionInfo";
 import SectionInvitationStep from "./sectionInvitationStep";
 import SectionSolution from "./sectionSolution";
@@ -27,7 +28,8 @@ export const LandingPage = () => {
       <SectionSolution />
       <SectionCardPrice />
       <SectionTestimoni />
-      <Footer />
+      <SectionFooter />
+      {/* <Footer /> */}
       {/* <div className="px-4 mx-auto lg:px-0 xl:max-w-screen-xl xl:px-8 2xl:max-w-screen-xl"> */}
       {/* <Section2 />
       <Section1 /> */}
