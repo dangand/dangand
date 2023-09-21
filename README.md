@@ -8,6 +8,7 @@
 - fix minor bug
 - optimize performance
 
+```
 my-nextjs-app/
 ├── components/
 │ ├── Header.js
@@ -29,3 +30,4 @@ my-nextjs-app/
 ├── package.json
 ├── README.md
 └── ...
+```
