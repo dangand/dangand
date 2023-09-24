@@ -1,5 +1,6 @@
 import {
   DangandCreatifStudio,
+  DangandIconPrimary,
   Facebook,
   Instagram,
   LinkedInd,
@@ -7,13 +8,14 @@ import {
 } from "@/assets/svg";
 import { BaseButton } from "@/components/input";
 import { ContainerSection } from "@/components/layout";
+import { Text } from "@/components/typography";
 
 const SectionFooter = () => {
   return (
     <section className="w-full bg-[#1E1B4B]">
-      <ContainerSection>
-        <footer className="flex flex-col gap-12 mx-auto py-6 md:py-14">
-          <div className="flex flex-col gap-6 md:gap-24 text-white md:flex-row">
+      <div className="max-w-full px-6 py-8 mx-auto md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl md:py-8">
+        <footer className="flex flex-col gap-12 py-6 mx-auto ">
+          <div className="flex flex-col gap-6 text-white md:gap-24 md:flex-row">
             <div className="flex flex-col">
               <div className="flex flex-col flex-1 gap-7 border-b border-[#0C3868] pb-8">
                 <h4 className="text-lg text-[#B2DDF2]">Follow kami:</h4>
@@ -45,7 +47,7 @@ const SectionFooter = () => {
                 />
               </div>
             </div>
-            <div className="flex flex-wrap gap-6 md:justify-between flex-1 w-full">
+            <div className="flex flex-wrap flex-1 w-full gap-6 md:justify-between">
               <div className="flex flex-col gap-4">
                 <h4 className="text-lg text-[#B2DDF2]">Other Page</h4>
                 <div className="flex flex-col gap-2">
@@ -77,12 +79,21 @@ const SectionFooter = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row md:gap-24 text-[#B2DDF2] ">
+          <div className="flex flex-col gap-6 items-center md:flex-row md:gap-24 text-[#B2DDF2] ">
             <div className="relative">
               {/* <p className="absolute text-xs text-white left-24 top-10">
               by Creatif Studio
             </p> */}
-              <DangandCreatifStudio />
+              <div className="flex items-center gap-3">
+                <DangandIconPrimary width={40} height={40} />
+                <Text
+                  variant="title"
+                  weight="semibold"
+                  className="text-white font-trip-sans-mono"
+                >
+                  Dangand
+                </Text>
+              </div>
             </div>
             <div className="flex flex-row gap-6 md:gap-14">
               <p>Privacy Policy</p>
@@ -92,7 +103,7 @@ const SectionFooter = () => {
             </div>
           </div>
         </footer>
-      </ContainerSection>
+      </div>
     </section>
   );
 };

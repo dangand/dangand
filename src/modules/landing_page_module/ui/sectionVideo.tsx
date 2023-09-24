@@ -17,22 +17,12 @@ import sampleSectionVidio from "../../../assets/image/sample-section-vidio.png";
 const SectionVideo = () => {
   return (
     <section className="w-full bg-[#E0E7FF]">
-      <ContainerSection className="flex-col items-center hidden gap-6 md:flex">
-        <p className="text-[#011F44] text-xl">
-          Di percaya lebih dari 100 pengguna di seluruh Indonesia
-        </p>
-        <div className="flex flex-rowgap-14z">
-          <WeTransfer />
-          <Trivago />
-          <MomentFactory />
-          <OneSignal />
-          <Dyson />
+      <div className="relative flex flex-col items-center w-full 2xl:h-[638px] md:h-[520px]">
+        <div className="hidden md:block">
+          <ShapeVidio />
         </div>
-      </ContainerSection>
-      <div className="relative flex mt-5 md:mt-0 flex-col items-center w-full 2xl:h-[638px] h-[525px]">
-        <ShapeVidio />
-        <div className="w-full bg-[#3730A3] absolute bottom-0">
-          <ContainerSection className="flex md:flex-row flex-col gap-6 md:gap-12">
+        <div className="w-full bg-[#3730A3] md:absolute bottom-0">
+          <ContainerSection className="flex flex-col gap-6 md:flex-row md:gap-12">
             <div className="flex-1 2xl:flex-2">
               <Image
                 src={sampleSectionVidio}

@@ -15,7 +15,7 @@ export const ContainerSection = (props: ContainerProps) => {
       {...resProps}
       className={clsx(
         resProps.className,
-        "max-w-full px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl py-5 md:py-24 mx-auto",
+        "max-w-full px-6 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl py-8 md:py-24 mx-auto",
       )}
     >
       {children}

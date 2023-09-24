@@ -110,14 +110,14 @@ const SectionCardPrice = () => {
             ad minim veniam,
           </p>
         </div>
-        <div className="flex flex-col gap-6 md:gap-0 w-full md:flex-row ">
+        <div className="flex flex-col w-full gap-6 md:gap-0 md:flex-row ">
           {CardPriceItem.map((value, index) => (
             <div className={clsx("w-full ")} key={index}>
               <div
                 className={clsx(
                   "w-full",
                   index == 0
-                    ? "rounded-t-2xl md:rounded-tl-2xl"
+                    ? "rounded-t-2xl md:rounded-none md:rounded-tl-2xl"
                     : index == CardPriceItem.length - 1
                     ? "rounded-t-2xl md:rounded-tr-2xl"
                     : "rounded-t-2xl md:rounded-none",

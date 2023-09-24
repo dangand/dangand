@@ -1,3 +1,6 @@
+import Image from "next/image";
+
+import ImageSectionSolution from "@/assets/image/section-solution.png";
 import { SolutionImage } from "@/assets/svg";
 import { BaseButton } from "@/components/input";
 import { ContainerSection } from "@/components/layout";
@@ -6,8 +9,8 @@ const SectionSolution = () => {
   return (
     <section className="w-full bg-[#E0E7FF]">
       <ContainerSection>
-        <div className="flex flex-col max-w-screen-lg gap-6 md:gap-20 mx-auto md:flex-row">
-          <div className="flex flex-col gap-3 flex-2">
+        <div className="flex flex-col max-w-screen-lg gap-6 mx-auto md:gap-20 md:flex-row">
+          <div className="flex flex-col gap-3 md:flex-1">
             <p className="text-sm text-indigo-500">cepat tapi bukan sicepat</p>
             <h2 className="  text-[#422439] text-3xl">
               Solusi buat kamu yang males menunggu
@@ -21,8 +24,8 @@ const SectionSolution = () => {
             </p>
             <BaseButton label="Ayo coba sekarang" variant="bordered" />
           </div>
-          <div className="flex-1">
-            <SolutionImage />
+          <div className="flex-1 w-full">
+            <Image src={ImageSectionSolution} alt="image-section-solution" />
           </div>
         </div>
       </ContainerSection>

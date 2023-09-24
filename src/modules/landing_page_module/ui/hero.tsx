@@ -1,7 +1,16 @@
 import Link from "next/link";
 import React from "react";
 
-import { CheckCircleActive, HeroFestival, HeroLine } from "@/assets/svg";
+import {
+  CheckCircleActive,
+  Dyson,
+  HeroFestival,
+  HeroLine,
+  MomentFactory,
+  OneSignal,
+  Trivago,
+  WeTransfer,
+} from "@/assets/svg";
 import { BaseButton } from "@/components/input";
 import {
   Box,
@@ -16,8 +25,8 @@ import { t } from "i18next";
 export const Hero = () => {
   return (
     <header className="bg-[#E0E7FF] text-black">
-      <ContainerSection>
-        <div className="flex md:flex-row gap-6 flex-col-reverse items-start justify-between">
+      <ContainerSection className="flex-col md:gap-20 md:flex">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row">
           <div className="flex flex-col gap-6 ">
             <div>
               <p className="text-3xl text-start md:text-5xl">
@@ -34,7 +43,7 @@ export const Hero = () => {
               undangan yang sesuai dengan kepribadian dan gaya kamu.
             </p>
             <div className="flex flex-col gap-2">
-              <div className="flex flex-row justify-between md:gap-6 ">
+              <div className="flex flex-row gap-2 md:gap-6 ">
                 <BaseButton label={t("tryFree")} />
                 <BaseButton variant="bordered" label="Konsultasi acaramu" />
               </div>
@@ -45,7 +54,18 @@ export const Hero = () => {
             <HeroFestival />
           </div>
         </div>
-
+        <div className="items-center hidden gap-6 md:flex-col md:flex">
+          <p className="text-[#011F44] text-xl">
+            Di percaya lebih dari 100 pengguna di seluruh Indonesia
+          </p>
+          <div className="flex flex-rowgap-14z">
+            <WeTransfer />
+            <Trivago />
+            <MomentFactory />
+            <OneSignal />
+            <Dyson />
+          </div>
+        </div>
         {/* <Center className="px-4 lg:px-0">
             <div className="flex flex-col items-center justify-center w-full h-full gap-4">
               <h1 className="max-w-2xl text-4xl font-bold text-center lg:text-4xl">
