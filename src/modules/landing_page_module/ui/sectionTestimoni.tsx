@@ -10,9 +10,9 @@ import { ContainerSection } from "@/components/layout";
 const SectionTestimoni = () => {
   return (
     <section className="w-full bg-[#C7D2FE]">
-      <ContainerSection className="flex flex-row gap-8 text-[#422439]">
-        <div className="flex flex-col justify-between h-[480px] flex-1">
-          <div className="flex flex-col gap-12">
+      <ContainerSection className="flex flex-col-reverse md:flex-row gap-8 text-[#422439]">
+        <div className="flex flex-col gap-6 justify-between h-[480px] flex-1">
+          <div className="flex flex-col gap-6 md:gap-12">
             <p className="text-2xl ">
               “Wow, undangan digital ini benar-benar mengubah cara saya
               merencanakan acara! Hemat waktu, tanpa repot-repot mengirim
@@ -29,7 +29,7 @@ const SectionTestimoni = () => {
               label="Yuk jadi bagian dari Dangand"
               variant="bordered"
             />
-            <div className="flex flex-row gap-11">
+            <div className="flex flex-row gap-6 md:gap-11">
               <LeftArrowBlack />
               <p>2 / 5</p>
               <RightArrowBlack />

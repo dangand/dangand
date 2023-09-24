@@ -33,29 +33,31 @@ export const NavbarLandingPage = () => {
   ];
 
   return (
-    <nav className="w-full bg-[#E0E7FF] px-20 py-5 text-white">
-      <div className="flex max-w-screen-xl mx-auto items-center justify-between">
+    <nav className="w-full bg-[#E0E7FF] px-4 lg:px-20 py-5 text-white">
+      <div className="flex items-center justify-between w-full mx-auto md:max-w-screen-xl">
         <div className="flex gap-14">
           {/* brand icon */}
           <div className="flex items-center gap-3">
             <DangandIconPrimary width={40} height={40} />
             <Text
               variant="title"
-              weight="medium"
-              className="font-trip-sans-mono text-black"
+              weight="semibold"
+              className="text-black font-trip-sans-mono"
             >
               Dangand
             </Text>
           </div>
 
           {/* nav menu */}
-          <div className="lg:flex items-center gap-6 hidden">
+          <div className="items-center hidden gap-6 lg:flex">
             {NAVBAR_LANDING_PAGE.map((item) => (
               <Link key={item.label} href={item.path}>
                 <p
                   className={`${
-                    currentRoute == item.path ? "text-white font-medium" : ""
-                  } text-[#011F44] text-base hover:text-white tansition duration`}
+                    currentRoute == item.path
+                      ? "text-indigo-800 font-semibold"
+                      : ""
+                  } text-[#011F44] text-base hover:text-indigo-800 font-medium tansition duration`}
                 >
                   {t(item.label)}
                 </p>
@@ -65,7 +67,7 @@ export const NavbarLandingPage = () => {
         </div>
 
         {/* button action */}
-        <div className="flex items-center gap-3">
+        <div className="lg:flex hidden items-center gap-3">
           <Link href={"/auth/login"}>
             <BaseButton variant="transparent" label={t("login")} />
           </Link>

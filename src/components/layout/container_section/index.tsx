@@ -13,7 +13,10 @@ export const ContainerSection = (props: ContainerProps) => {
   return (
     <div
       {...resProps}
-      className={clsx(resProps.className, "max-w-screen-xl py-24 mx-auto")}
+      className={clsx(
+        resProps.className,
+        "max-w-full px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl py-5 md:py-24 mx-auto",
+      )}
     >
       {children}
     </div>

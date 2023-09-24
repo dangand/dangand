@@ -1,6 +1,6 @@
 import { IconCheck, MaskotPremium } from "@/assets/svg";
 import { BaseButton } from "@/components/input";
-import { ContainerSection } from "@/components/layout";
+import { ContainerSection, TitleSection } from "@/components/layout";
 import { clsx } from "@/libs";
 
 type LIST_FITUR_TYPE = {
@@ -98,39 +98,40 @@ const CardPriceItem: CARD_PRICE_TYPE[] = [
 const SectionCardPrice = () => {
   return (
     <section className="w-full bg-[#E0E7FF]">
-      <ContainerSection className="flex flex-col items-center gap-10">
-        <div className="flex flex-col items-center gap-2 text-center">
-          <h1 className="text-5xl">
+      <ContainerSection className="flex flex-col items-center gap-6 md:gap-10">
+        <div className="flex flex-col items-center w-full gap-2 text-center">
+          <TitleSection>
             Mulai sekarang, sisa nya bisa di atur nanti.
-          </h1>
-          <p className="text-xl w-[845px]">
+          </TitleSection>
+
+          <p className="text-xl w-full md:w-[845px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam,
           </p>
         </div>
-        <div className="flex flex-row w-full ">
+        <div className="flex flex-col gap-6 md:gap-0 w-full md:flex-row ">
           {CardPriceItem.map((value, index) => (
             <div className={clsx("w-full ")} key={index}>
               <div
                 className={clsx(
-                  "w-full ",
+                  "w-full",
                   index == 0
-                    ? "rounded-tl-2xl"
+                    ? "rounded-t-2xl md:rounded-tl-2xl"
                     : index == CardPriceItem.length - 1
-                    ? "rounded-tr-2xl"
-                    : null,
+                    ? "rounded-t-2xl md:rounded-tr-2xl"
+                    : "rounded-t-2xl md:rounded-none",
                   value.recommended
                     ? "bg-black  pt-6 pb-3 rounded-tl-2xl"
-                    : "bg-[#6366F1] mt-3 py-3",
+                    : "bg-[#6366F1] md:mt-3 py-3",
                 )}
               >
                 <h3 className="text-center text-white">{value.namePrice}</h3>
               </div>
               <div
                 className={clsx(
-                  "bg-[#C7D2FE] flex flex-col items-center gap-2 p-12 h-[821px] ",
-                  index == 1 ? "border-x-2 border-[#6366F1]" : null,
+                  "bg-[#C7D2FE] flex flex-col items-center gap-2 p-6 md:p-12 md:h-[821px] rounded-b-2xl md:rounded-none",
+                  index == 1 ? "md:border-x-2 md:border-[#6366F1]" : null,
                 )}
               >
                 <div className="flex flex-col items-center gap-2 ">

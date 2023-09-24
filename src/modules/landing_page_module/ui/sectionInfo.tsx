@@ -1,6 +1,6 @@
 import { CostImageInfo, DataImageInfo, PresenceImageInfo } from "@/assets/svg";
 import { BaseButton } from "@/components/input";
-import { ContainerSection } from "@/components/layout";
+import { ContainerSection, TitleSection } from "@/components/layout";
 import { clsx } from "@/libs";
 
 type INFO_TYPE = {
@@ -41,15 +41,15 @@ const InfoItem: INFO_TYPE[] = [
 const SectionInfo = () => {
   return (
     <section className="bg-[#E0E7FF] w-full">
-      <ContainerSection className="flex flex-col items-center gap-32">
-        <p className="text-5xl">Gimana cara Dangand bisa bantu acara kamu?</p>
-        <div className="flex flex-col gap-[152px] max-w-screen-lg">
+      <ContainerSection className="flex flex-col items-center gap-6 md:gap-32">
+        <TitleSection>Gimana cara Dangand bisa bantu acara kamu?</TitleSection>
+        <div className="flex flex-col gap-6 md:gap-[152px] w-full">
           {InfoItem.map((value, index) => (
             <div
               key={index}
               className={clsx(
-                index % 2 === 0 ? "flex-row" : "flex-row-reverse",
-                "flex justify-center gap-20",
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
+                "flex flex-col justify-center gap-4 md:gap-20",
               )}
             >
               <div className="flex flex-col flex-1 gap-3">
@@ -61,7 +61,7 @@ const SectionInfo = () => {
                 <p className="text-base">{value.deskripsi}</p>
                 <BaseButton label="Lihat Selengkapnya" variant="bordered" />
               </div>
-              <div className="flex1">{value.Image}</div>
+              <div className="md:flex-1 w-full">{value.Image}</div>
             </div>
           ))}
         </div>

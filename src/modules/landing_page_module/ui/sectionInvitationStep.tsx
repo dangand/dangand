@@ -3,7 +3,7 @@ import {
   RegisterImageStep,
   SendImageStep,
 } from "@/assets/svg";
-import { ContainerSection } from "@/components/layout";
+import { ContainerSection, TitleSection } from "@/components/layout";
 
 type STEP_TYPE = {
   title: string;
@@ -35,18 +35,19 @@ const StepItem: STEP_TYPE[] = [
 const SectionInvitationStep = () => {
   return (
     <section className="w-full bg-[#C7D2FE]">
-      <ContainerSection className="flex flex-col items-center gap-14">
-        <h1 className="text-5xl text-[#011F44]">
+      <ContainerSection className="flex flex-col items-center gap-6 md:gap-14">
+        <TitleSection className="text-[#011F44]">
           Langkah - langkah buat undangan di Dangand
-        </h1>
-        <div className="flex flex-row gap-14">
+        </TitleSection>
+
+        <div className="flex flex-col md:flex-row gap-6 md:gap-14">
           {StepItem.map((value, index) => (
             <div
               className="flex flex-col gap-2 text-[#011F44] items-center"
               key={index}
             >
               {value.image}
-              <h3 className="text-3xl">{value.title}</h3>
+              <h3 className="text-2xl 2xl:text-3xl">{value.title}</h3>
               <p className="text-base text-center">{value.deskripsi}</p>
             </div>
           ))}

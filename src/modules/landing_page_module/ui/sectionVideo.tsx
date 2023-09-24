@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import {
   Dyson,
   ImageVidio,
@@ -8,12 +10,14 @@ import {
   WeTransfer,
 } from "@/assets/svg";
 import { BaseButton } from "@/components/input";
-import { ContainerSection } from "@/components/layout";
+import { ContainerSection, TitleSection } from "@/components/layout";
+
+import sampleSectionVidio from "../../../assets/image/sample-section-vidio.png";
 
 const SectionVideo = () => {
   return (
     <section className="w-full bg-[#E0E7FF]">
-      <ContainerSection className="flex flex-col items-center gap-6">
+      <ContainerSection className="flex-col items-center hidden gap-6 md:flex">
         <p className="text-[#011F44] text-xl">
           Di percaya lebih dari 100 pengguna di seluruh Indonesia
         </p>
@@ -25,15 +29,20 @@ const SectionVideo = () => {
           <Dyson />
         </div>
       </ContainerSection>
-      <div className="relative flex flex-col items-center w-full h-[638px]">
+      <div className="relative flex mt-5 md:mt-0 flex-col items-center w-full 2xl:h-[638px] h-[525px]">
         <ShapeVidio />
         <div className="w-full bg-[#3730A3] absolute bottom-0">
-          <ContainerSection className="flex gap-12">
-            <div className="flex-2">
-              <ImageVidio />
+          <ContainerSection className="flex md:flex-row flex-col gap-6 md:gap-12">
+            <div className="flex-1 2xl:flex-2">
+              <Image
+                src={sampleSectionVidio}
+                height={385}
+                width={684}
+                alt="sampleSectionVidio"
+              />
             </div>
             <div className="flex flex-col flex-1 gap-6 text-white">
-              <p className="text-5xl">Apa sih itu Dangand?</p>
+              <TitleSection>Apa sih itu Dangand?</TitleSection>
               <p className="text-base">
                 Nih, kita punya video singkat yang ngebahas bagaimana undangan
                 digital kami bisa bikin acaramu lebih seru. Kita bakal jelasin

@@ -6,7 +6,7 @@ const SectionSolution = () => {
   return (
     <section className="w-full bg-[#E0E7FF]">
       <ContainerSection>
-        <div className="flex flex-row max-w-screen-lg gap-20 mx-auto">
+        <div className="flex flex-col max-w-screen-lg gap-6 md:gap-20 mx-auto md:flex-row">
           <div className="flex flex-col gap-3 flex-2">
             <p className="text-sm text-indigo-500">cepat tapi bukan sicepat</p>
             <h2 className="  text-[#422439] text-3xl">

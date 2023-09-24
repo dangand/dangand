@@ -86,9 +86,9 @@ const Section1 = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-start gap-8 bg-indigo-800">
+    <section className="flex flex-col items-start w-full gap-8 bg-indigo-800">
       <ContainerSection>
-        <div className="w-full flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           <div className="relative flex flex-col items-start justify-start ">
             <div className="absolute p-10 bg-orange-100 rounded-md -top-6 -left-6 -z-10"></div>
             <h2 className="text-3xl max-w-[350px] font-semibold ">
@@ -112,7 +112,7 @@ const Section1 = () => {
             item.position == "left" ? (
               <div
                 key={item.title}
-                className="lg:grid flex-row-reverse grid-cols-12 gap-8"
+                className="flex-row-reverse grid-cols-12 gap-8 lg:grid"
               >
                 <div
                   className={`${item.color} relative h-[240px]  col-span-5 p-8 rounded flex flex-col gap-2 items-center justify-center overflow-hidden `}
