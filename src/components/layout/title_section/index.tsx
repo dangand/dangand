@@ -1,6 +1,8 @@
-import { ComponentPropsWithoutRef } from "react";
+import React from "react";
 
 import { clsx } from "@/libs";
+
+import type { ComponentPropsWithoutRef } from "react";
 
 interface ContainerProps extends ComponentPropsWithoutRef<"h2"> {
   children: React.ReactNode;
