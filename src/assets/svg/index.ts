@@ -59,3 +59,4 @@ export { default as LineHorizontal } from "./line-horizontal.svg";
 export { default as LeftArrowBlack } from "./left-arrow-black.svg";
 export { default as RightArrowBlack } from "./right-arrow-black.svg";
 export { default as DangandCreatifStudio } from "./dangand-creatif-studio.svg";
+export { default as Menu } from "./menu.svg";

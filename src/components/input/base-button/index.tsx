@@ -52,7 +52,7 @@ export const BaseButton = (props: BaseButtonProps) => {
           {...restProps}
           className={clsx(
             btnStyle,
-            "border-2 box-content border-primary text-primary font-semibold text-sm rounded-3xl px-4 py-2 hover:bg-primary hover:text-white transtion duration-200 disabled:opacity-50",
+            "border-2 border-primary text-primary font-semibold text-sm rounded-3xl px-4 py-2 hover:bg-primary hover:text-white transtion duration-200 disabled:opacity-50",
             restProps.className,
           )}
           disabled={loading || restProps.disabled}
@@ -73,7 +73,7 @@ export const BaseButton = (props: BaseButtonProps) => {
           {...restProps}
           className={clsx(
             btnStyle,
-            "border-2 box-content border-transparent  text-black font-semibold text-sm rounded-3xl px-4 py-2 hover:border-primary hover:text-primary transtion duration-200 disabled:opacity-50",
+            "border-2  border-transparent  text-black font-semibold text-sm rounded-3xl px-4 py-2 hover:border-primary hover:text-primary transtion duration-200 disabled:opacity-50",
             restProps.className,
           )}
           disabled={loading || restProps.disabled}
@@ -94,7 +94,7 @@ export const BaseButton = (props: BaseButtonProps) => {
           {...restProps}
           className={clsx(
             btnStyle,
-            "font-regular text-sm rounded-3xl px-4 py-2.5 hover:opacity-80 transtion duration-200 disabled:opacity-50",
+            "font-regular text-sm rounded-3xl px-4 py-2 hover:opacity-80 transtion duration-200 disabled:opacity-50",
             restProps.className,
           )}
           disabled={loading || restProps.disabled}

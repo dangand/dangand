@@ -36,11 +36,11 @@ const SectionInvitationStep = () => {
   return (
     <section className="w-full bg-[#C7D2FE]">
       <ContainerSection className="flex flex-col items-center gap-6 md:gap-14">
-        <TitleSection className="text-[#011F44]">
+        <TitleSection className="text-[#011F44] text-center">
           Langkah - langkah buat undangan di Dangand
         </TitleSection>
 
-        <div className="flex flex-col md:flex-row gap-6 md:gap-14">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-14">
           {StepItem.map((value, index) => (
             <div
               className="flex flex-col gap-2 text-[#011F44] items-center"

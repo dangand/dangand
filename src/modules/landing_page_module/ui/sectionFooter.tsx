@@ -80,7 +80,7 @@ const SectionFooter = () => {
             </div>
           </div>
           <div className="flex flex-col gap-6 items-center md:flex-row md:gap-24 text-[#B2DDF2] ">
-            <div className="relative">
+            <div className="relative flex flex-row justify-start w-full">
               {/* <p className="absolute text-xs text-white left-24 top-10">
               by Creatif Studio
             </p> */}

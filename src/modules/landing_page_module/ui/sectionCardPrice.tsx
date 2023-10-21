@@ -104,10 +104,11 @@ const SectionCardPrice = () => {
             Mulai sekarang, sisa nya bisa di atur nanti.
           </TitleSection>
 
-          <p className="text-xl w-full md:w-[845px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,
+          <p className="text-base w-full md:w-[845px]">
+            Temukan paket yang sesuai, kamu dapat merencanakan undangan impian
+            kamu tanpa khawatir tentang harga. Lihat opsi harga kami di bawah
+            ini dan mulai merencanakan perayaan kamu dengan mudah dan tanpa
+            repot.
           </p>
         </div>
         <div className="flex flex-col w-full gap-6 md:gap-0 md:flex-row ">
@@ -151,7 +152,7 @@ const SectionCardPrice = () => {
                   <p>akses selamanya</p>
                 </div>
                 <BaseButton
-                  className="w-full"
+                  className="lg:w-full w-[300px]"
                   label={value.textButton}
                   variant={value.recommended ? "primary" : "bordered"}
                 />
